@@ -1,0 +1,43 @@
+services:
+  - type: worker
+    name: iiuo-renamer
+    env: docker
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_NAME
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: LOG_CHANNEL_ID
+        sync: false
+      - key: FORCE_SUBS
+        sync: false
+      - key: START_PIC
+        sync: false
+      - key: MAX_FILE_SIZE_MB
+        value: "2048"
+      - key: ENABLE_HEALTH_SERVER
+        value: "false"
+      - key: BROADCAST_BATCH_SIZE
+        value: "25"
+      - key: BROADCAST_SLEEP_SECONDS
+        value: "2"
+      - key: WORKERS
+        value: "100"
+      - key: RENAME_TIMEOUT_SECONDS
+        value: "900"
+      - key: DOWNLOAD_DIR
+        value: "/opt/render/project/src/data/downloads"
+      - key: TEMP_DIR
+        value: "/opt/render/project/src/data/temp"
+      - key: APP_NAME
+        value: "IIUO Rename Bot"
